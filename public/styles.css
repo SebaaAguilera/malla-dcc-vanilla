@@ -1,0 +1,34 @@
+#malla {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header{
+    text-align: center;
+  }
+  .semester {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .semester-title {
+    text-align: center;
+  }
+  .semester-title p {
+    transform: rotate(270deg);
+  }
+  .subject {
+    background-color: lightgrey;
+    min-width: 200px;
+    max-width: 200px;
+    height: 120px;
+    margin-inline: 1rem;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .subject p {
+    font-weight: 500;
+    margin: 2rem 0.5rem;
+  }
