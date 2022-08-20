@@ -18,6 +18,26 @@
   --simultaneous-outline-color: rgb(255,211,77);
 }
 
+[data-theme="dark"] {
+  --body-color: #111;
+  --text-color: #f2f2f2;
+
+  --subject-color: darkslategrey;
+  --subject-outline-color: slategrey;
+
+  --hover-color: rgba(61, 255, 178, 0.5);
+  --hover-outline-color: rgb(110,231,183);
+
+  --required-color: rgba(77, 213, 255, 0.5);
+  --required-outline-color: rgb(147,197,253);
+
+  --or-color: rgba(255, 91, 91, 0.5);
+  --or-outline-color: rgb(252,165,165);
+
+  --simultaneous-color: rgba(255, 205, 55, 0.5);
+  --simultaneous-outline-color: rgb(255,211,77);
+}
+
 body {
   background-color: var(--body-color);
   color: var(--text-color);

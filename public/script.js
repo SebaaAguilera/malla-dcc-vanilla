@@ -90,3 +90,12 @@ const mount = (malla) => {
     canvas.appendChild(createSemester(number, subjects));
   });
 };
+
+// eslint-disable-next-line require-jsdoc
+function changeTheme() {
+  currentTheme =
+    document.getElementById('checkboxTheme').checked ? 'Dark' : 'Light';
+  document.getElementById('checkboxInfo').innerHTML = `${currentTheme} theme`;
+  document.querySelector('body').dataset.theme = currentTheme.toLowerCase();
+}
+changeTheme();
