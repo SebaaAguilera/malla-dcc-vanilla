@@ -83,6 +83,7 @@ const createSemester = (number, subjects) => {
   );
 };
 
+// eslint-disable-next-line no-unused-vars
 const mount = (malla) => {
   const canvas = document.getElementById('malla');
   canvas.innerHTML = '';
@@ -91,7 +92,6 @@ const mount = (malla) => {
   });
 };
 
-// Theme cookie
 const localStorageThemeKey = 'localStorageThemeKey';
 let currentTheme = localStorage.getItem(localStorageThemeKey) ||
   window.matchMedia &&
@@ -99,14 +99,12 @@ let currentTheme = localStorage.getItem(localStorageThemeKey) ||
 console.log('currentTheme', currentTheme);
 document.getElementById('checkboxTheme').checked = currentTheme === 'Dark';
 
-// Theme changing
-// eslint-disable-next-line require-jsdoc
-function changeTheme() {
+const changeTheme = () => {
   currentTheme =
     document.getElementById('checkboxTheme').checked ? 'Dark' : 'Light';
   document.getElementById('checkboxInfo').innerHTML = `${currentTheme} theme`;
   document.querySelector('body').dataset.theme = currentTheme.toLowerCase();
-}
+};
 changeTheme();
 
 
