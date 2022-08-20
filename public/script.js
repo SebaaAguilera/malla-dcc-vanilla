@@ -91,6 +91,15 @@ const mount = (malla) => {
   });
 };
 
+// Theme cookie
+const localStorageThemeKey = 'localStorageThemeKey';
+let currentTheme = localStorage.getItem(localStorageThemeKey) ||
+  window.matchMedia &&
+  window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Dark' : 'Light';
+console.log('currentTheme', currentTheme);
+document.getElementById('checkboxTheme').checked = currentTheme === 'Dark';
+
+// Theme changing
 // eslint-disable-next-line require-jsdoc
 function changeTheme() {
   currentTheme =
@@ -99,3 +108,5 @@ function changeTheme() {
   document.querySelector('body').dataset.theme = currentTheme.toLowerCase();
 }
 changeTheme();
+
+
