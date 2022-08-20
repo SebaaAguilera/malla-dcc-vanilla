@@ -7,23 +7,21 @@ const createElement = (tag, attributes, ...children) => {
 };
 
 const changeStyleById = (id, status) => {
-  const elementStyle = document.getElementById(id).style;
+  const element = document.getElementById(id);
   switch (status) {
     case 'required':
-      elementStyle.backgroundColor = 'rgba(147,197,253,0.5)';
-      elementStyle.border = '2px solid rgb(147,197,253)';
+      element.classList.add('subject-required');
       break;
     case 'simultaneous':
-      elementStyle.backgroundColor = 'rgba(255,211,77,0.5)';
-      elementStyle.border = '2px solid rgb(255,211,77)';
+      element.classList.add('subject-simultaneous');
       break;
     case 'or':
-      elementStyle.backgroundColor = 'rgba(252,165,165,0.5)';
-      elementStyle.border = '2px solid rgb(252,165,165)';
+      element.classList.add('subject-or');
       break;
     default:
-      elementStyle.backgroundColor = 'lightgrey';
-      elementStyle.border = '2px solid lightgrey';
+      element.classList.remove('subject-required');
+      element.classList.remove('subject-simultaneous');
+      element.classList.remove('subject-or');
       break;
   }
 };
@@ -36,8 +34,8 @@ const createSubject = (subject) => {
     createElement('div', {id: subject.code, class: 'subject'}, paragraph);
 
   subjectDiv.onmouseover = () => {
-    subjectDiv.style.backgroundColor = 'rgba(110,231,183,0.5)';
-    subjectDiv.style.border = '2px solid rgb(110,231,183)';
+    subjectDiv.classList.add('subject-hover');
+
     subject.requirements.forEach((requirement) => {
       if (requirement.endsWith('S')) {
         changeStyleById(requirement.slice(0, -1), 'simultaneous');
@@ -51,8 +49,8 @@ const createSubject = (subject) => {
   };
 
   subjectDiv.onmouseout = () => {
-    subjectDiv.style.backgroundColor = 'lightgrey';
-    subjectDiv.style.border = '2px solid lightgrey';
+    subjectDiv.classList.remove('subject-hover');
+
     subject.requirements.forEach((requirement) => {
       if (requirement.endsWith('S')) {
         changeStyleById(requirement.slice(0, -1));
