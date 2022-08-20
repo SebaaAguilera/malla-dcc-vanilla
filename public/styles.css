@@ -44,9 +44,6 @@ header{
 
 .semester-title {
   text-align: center;
-}
-
-.semester-title p {
   transform: rotate(270deg);
 }
 
