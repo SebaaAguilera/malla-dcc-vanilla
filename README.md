@@ -9,13 +9,13 @@ To-do list:
 - [x] CSS Vars para los colores
 - [x] Especificar Formacion Integral v5
 - [ ] Especificar Formacion Integral v3
-- [ ] Paleta Dark mode
-- [ ] Switch Dark mode
+- [x] Paleta Dark mode
+- [x] Switch Dark mode
 - [ ] Centrar la malla
 - [ ] Reactividad
 - [ ] Codigo de ramo como tag
 - [ ] Creditos de ramo como tag
 - [ ] Marcadores de año
 - [ ] Switch entre v3/v5 en vez de botones
-- [ ] Cookie para dark mode/light mode
+- [x] Cookie para dark mode/light mode (Requiere testing)
 - [ ] Cookie para malla v3/v5
