@@ -7,6 +7,8 @@ Fork de https://github.com/SebaaAguilera/malla-dcc-vanilla
 To-do list:
 - [x] Class Toggles
 - [x] CSS Vars para los colores
+- [x] Especificar Formacion Integral v5
+- [ ] Especificar Formacion Integral v3
 - [ ] Paleta Dark mode
 - [ ] Switch Dark mode
 - [ ] Centrar la malla
