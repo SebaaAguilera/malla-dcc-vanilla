@@ -8,10 +8,16 @@
   <!-- No me gusta tener que importar la data así :c -->
   <script type="text/javascript" src="./public/mallav3.js"></script>
   <script type="text/javascript" src="./public/mallav5.js"></script>
-  <script src="./public/script.js"></script>
   <body>
     <header>
       <h2>Malla DCC</h2>
+      <div class="switch">
+        <input type="checkbox" name="checkboxTheme" id="checkboxTheme" onclick="changeTheme()">
+        <span class="info" id="checkboxInfo">Light theme</span>
+      </div>
+
+      <script src="./public/script.js"></script>
+
       <div>
         <button id="mountv3" onclick="mount(mallav3)">Malla v3</button>
         <button id="mountv5" onclick="mount(mallav5)">Malla v5</button>

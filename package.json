@@ -1,0 +1,23 @@
+{
+  "name": "malla-dcc-vanilla",
+  "version": "1.0.0",
+  "description": "Este cófigo fue basado en este [Gist](https://gist.github.com/SebaaAguilera/d323fb2befac955ee2546732ee0d6fb5)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nyveon/malla-dcc-vanilla.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nyveon/malla-dcc-vanilla/issues"
+  },
+  "homepage": "https://github.com/Nyveon/malla-dcc-vanilla#readme",
+  "devDependencies": {
+    "eslint": "^8.22.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
