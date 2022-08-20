@@ -94,9 +94,8 @@ const mount = (malla) => {
 
 const localStorageThemeKey = 'localStorageThemeKey';
 let currentTheme = localStorage.getItem(localStorageThemeKey) ||
-  window.matchMedia &&
-  window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Dark' : 'Light';
-console.log('currentTheme', currentTheme);
+  (window.matchMedia &&
+  window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Dark' : 'Light');
 document.getElementById('checkboxTheme').checked = currentTheme === 'Dark';
 
 const changeTheme = () => {
@@ -107,5 +106,3 @@ const changeTheme = () => {
   localStorage.setItem(localStorageThemeKey, currentTheme);
 };
 changeTheme();
-
-
