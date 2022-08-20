@@ -19,3 +19,4 @@ To-do list:
 - [ ] Switch entre v3/v5 en vez de botones
 - [x] Cookie para dark mode/light mode (Requiere testing)
 - [ ] Cookie para malla v3/v5
+- [ ] Leyenda de colores
