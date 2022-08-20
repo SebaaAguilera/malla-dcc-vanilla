@@ -20,3 +20,4 @@ To-do list:
 - [x] Cookie para dark mode/light mode (Requiere testing)
 - [ ] Cookie para malla v3/v5
 - [ ] Leyenda de colores
+- [ ] Diferencia en forma de outline para color-blindness
