@@ -104,6 +104,7 @@ const changeTheme = () => {
     document.getElementById('checkboxTheme').checked ? 'Dark' : 'Light';
   document.getElementById('checkboxInfo').innerHTML = `${currentTheme} theme`;
   document.querySelector('body').dataset.theme = currentTheme.toLowerCase();
+  localStorage.setItem(localStorageThemeKey, currentTheme);
 };
 changeTheme();
 
