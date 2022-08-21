@@ -33,11 +33,11 @@ const changeStyleById = (id, status) => {
 };
 
 const createSubject = (subject) => {
-  const paragraph = document.createElement('p');
-  paragraph.innerHTML = `${subject.name}<br>${subject.code}`;
+  const title = document.createElement('p');
+  title.textContent = subject.name;
 
   const subjectDiv =
-    createElement('div', {id: subject.code, class: 'subject'}, paragraph);
+    createElement('div', {id: subject.code, class: 'subject'}, title);
 
   subjectDiv.onmouseover = () => {
     subjectDiv.classList.add('subject-hover');
