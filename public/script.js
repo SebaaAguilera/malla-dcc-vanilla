@@ -1,6 +1,8 @@
-/* Local storage keys */
+/* Local storage */
 const localStorageThemeKey = 'localStorageThemeKey';
 const localStorageMallaKey = 'localStorageMallaKey';
+let currentTheme;
+let currentMalla;
 
 const createElement = (tag, attributes, ...children) => {
   const element = document.createElement(tag);
@@ -102,12 +104,6 @@ const mount = (mallaKey) => {
   });
 };
 
-
-let currentTheme = localStorage.getItem(localStorageThemeKey) ||
-  (window.matchMedia &&
-  window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Dark' : 'Light');
-document.getElementById('checkboxTheme').checked = currentTheme === 'Dark';
-
 const changeTheme = () => {
   currentTheme =
     document.getElementById('checkboxTheme').checked ? 'Dark' : 'Light';
@@ -115,4 +111,13 @@ const changeTheme = () => {
   document.querySelector('body').dataset.theme = currentTheme.toLowerCase();
   localStorage.setItem(localStorageThemeKey, currentTheme);
 };
-changeTheme();
+
+const init = () => {
+  mount('mallav5');
+
+  currentTheme = localStorage.getItem(localStorageThemeKey) ||
+    (window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Dark' : 'Light');
+  document.getElementById('checkboxTheme').checked = currentTheme === 'Dark';
+  changeTheme();
+}
