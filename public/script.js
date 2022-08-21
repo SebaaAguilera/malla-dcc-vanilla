@@ -84,9 +84,15 @@ const createSemester = (number, subjects) => {
 };
 
 // eslint-disable-next-line no-unused-vars
-const mount = (malla) => {
+const mount = (mallaKey) => {
   const canvas = document.getElementById('malla');
   canvas.innerHTML = '';
+
+  let malla = mallav5;
+  if (mallaKey === 'mallav3') {
+    malla = mallav3;
+  }
+
   malla.semesters.map(({number, subjects}) => {
     canvas.appendChild(createSemester(number, subjects));
   });
