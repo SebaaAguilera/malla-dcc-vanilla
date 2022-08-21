@@ -33,7 +33,8 @@ const changeStyleById = (id, status) => {
 };
 
 const createSubject = (subject) => {
-  const title = document.createElement('p');
+  const title = document.createElement('div');
+  title.classList.add('subject-title');
   title.textContent = subject.name;
 
   const code = document.createElement('span');
