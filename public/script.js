@@ -39,7 +39,10 @@ const createSubject = (subject) => {
   const code = document.createElement('span');
   code.textContent = subject.code;
 
-  const bar = createElement('div', {}, code);
+  const credits = document.createElement('span');
+  credits.textContent = subject.credits;
+
+  const bar = createElement('div', {}, code, credits);
   bar.classList.add('subject-bar');
 
   const subjectDiv =

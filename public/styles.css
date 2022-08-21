@@ -111,4 +111,6 @@ header{
   background-color: var(--bar-color);
   text-align: left;
   padding: 2px;
+  display: flex;
+  justify-content: space-between;
 }
