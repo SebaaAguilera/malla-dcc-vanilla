@@ -100,16 +100,25 @@ header{
 .subject-required {
   background-color: var(--required-color);
   border-color: var(--required-outline-color);
+  outline-color: var(--required-outline-color);
+  outline-style: double;
+  outline-width: 4px;
 }
 
 .subject-or {
   background-color: var(--or-color);
   border-color: var(--or-outline-color);
+  outline-color: var(--or-outline-color);
+  outline-style: dotted;
+  outline-width: 2px;
 }
 
 .subject-simultaneous {
   background-color: var(--simultaneous-color);
   border-color: var(--simultaneous-outline-color);
+  outline-color: var(--simultaneous-outline-color);
+  outline-style: dashed;
+  outline-width: 2px;
 }
 
 .subject-bar {
