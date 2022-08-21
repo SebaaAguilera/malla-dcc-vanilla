@@ -1,3 +1,7 @@
+/* Local storage keys */
+const localStorageThemeKey = 'localStorageThemeKey';
+const localStorageMallaKey = 'localStorageMallaKey';
+
 const createElement = (tag, attributes, ...children) => {
   const element = document.createElement(tag);
   Object.entries(attributes).forEach(([key, attr]) =>
@@ -98,7 +102,7 @@ const mount = (mallaKey) => {
   });
 };
 
-const localStorageThemeKey = 'localStorageThemeKey';
+
 let currentTheme = localStorage.getItem(localStorageThemeKey) ||
   (window.matchMedia &&
   window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Dark' : 'Light');
