@@ -102,6 +102,9 @@ const mount = (mallaKey) => {
   malla.semesters.map(({number, subjects}) => {
     canvas.appendChild(createSemester(number, subjects));
   });
+
+  currentMalla = mallaKey;
+  localStorage.setItem(localStorageMallaKey, currentMalla);
 };
 
 const changeTheme = () => {
@@ -113,7 +116,8 @@ const changeTheme = () => {
 };
 
 const init = () => {
-  mount('mallav5');
+  currentMalla = localStorage.getItem(localStorageMallaKey) || 'mallav5';
+  mount(currentMalla);
 
   currentTheme = localStorage.getItem(localStorageThemeKey) ||
     (window.matchMedia &&
