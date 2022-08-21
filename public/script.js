@@ -33,11 +33,36 @@ const changeStyleById = (id, status) => {
 };
 
 const createSubject = (subject) => {
-  const paragraph = document.createElement('p');
-  paragraph.innerHTML = `${subject.name}<br>${subject.code}`;
+  // Subject name
+  const title = document.createElement('div');
+  title.classList.add('subject-title');
+  title.textContent = subject.name;
 
+  // Subject code
+  const code = document.createElement('span');
+  code.textContent = subject.code;
+
+  // Credits number hover tooltip
+  const tooltip = document.createElement('div');
+  tooltip.classList.add('tooltip-text');
+  tooltip.textContent =
+    `${subject.credits} créditos (${Math.round(subject.credits * 5 / 3)} UDs)`;
+
+  // Credits number
+  const credits = document.createElement('div');
+  credits.textContent = subject.credits;
+  credits.appendChild(tooltip);
+  credits.classList.add('tooltip');
+
+  // Top bar
+  const bar = document.createElement('div');
+  bar.appendChild(code);
+  bar.appendChild(credits);
+  bar.classList.add('subject-bar');
+
+  // Subject
   const subjectDiv =
-    createElement('div', {id: subject.code, class: 'subject'}, paragraph);
+    createElement('div', {id: subject.code, class: 'subject'}, bar, title);
 
   subjectDiv.onmouseover = () => {
     subjectDiv.classList.add('subject-hover');
