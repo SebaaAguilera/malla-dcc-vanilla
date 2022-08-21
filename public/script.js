@@ -89,16 +89,11 @@ const createSemester = (number, subjects) => {
   );
 };
 
-// eslint-disable-next-line no-unused-vars
 const mount = (mallaKey) => {
   const canvas = document.getElementById('malla');
   canvas.innerHTML = '';
 
-  let malla = mallav5;
-  if (mallaKey === 'mallav3') {
-    malla = mallav3;
-  }
-
+  let malla = (mallaKey === 'mallav5') ? mallav5 : mallav3;
   malla.semesters.map(({number, subjects}) => {
     canvas.appendChild(createSemester(number, subjects));
   });
@@ -107,7 +102,7 @@ const mount = (mallaKey) => {
   localStorage.setItem(localStorageMallaKey, currentMalla);
 };
 
-const changeTheme = () => {
+const toggleTheme = () => {
   currentTheme =
     document.getElementById('checkboxTheme').checked ? 'Dark' : 'Light';
   document.getElementById('checkboxInfo').innerHTML = `${currentTheme} theme`;
@@ -123,5 +118,5 @@ const init = () => {
     (window.matchMedia &&
     window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Dark' : 'Light');
   document.getElementById('checkboxTheme').checked = currentTheme === 'Dark';
-  changeTheme();
+  toggleTheme();
 }
