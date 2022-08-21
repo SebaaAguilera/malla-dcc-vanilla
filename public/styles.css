@@ -2,8 +2,8 @@
   --body-color: #f2f2f2;
   --text-color: #111;
 
-  --subject-color: lightgrey;
-  --subject-outline-color: darkgrey;
+  --subject-color: rgb(219, 224, 224);
+  --subject-outline-color: rgb(177, 184, 181);
 
   --hover-color: rgba(110,231,183,0.5);
   --hover-outline-color: rgb(110,231,183);
@@ -16,6 +16,8 @@
 
   --simultaneous-color: rgba(255,211,77,0.5);
   --simultaneous-outline-color: rgb(255,211,77);
+
+  --bar-color: rgba(118, 165, 153, 0.5);
 }
 
 [data-theme="dark"] {
@@ -36,6 +38,8 @@
 
   --simultaneous-color: rgba(255, 205, 55, 0.5);
   --simultaneous-outline-color: rgb(255,211,77);
+
+  --bar-color: rgba(33, 59, 52, 0.5);
 }
 
 body {
@@ -101,4 +105,10 @@ header{
 .subject-simultaneous {
   background-color: var(--simultaneous-color);
   border-color: var(--simultaneous-outline-color);
+}
+
+.subject-bar {
+  background-color: var(--bar-color);
+  text-align: left;
+  padding: 2px;
 }

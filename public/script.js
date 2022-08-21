@@ -36,8 +36,14 @@ const createSubject = (subject) => {
   const title = document.createElement('p');
   title.textContent = subject.name;
 
+  const code = document.createElement('span');
+  code.textContent = subject.code;
+
+  const bar = createElement('div', {}, code);
+  bar.classList.add('subject-bar');
+
   const subjectDiv =
-    createElement('div', {id: subject.code, class: 'subject'}, title);
+    createElement('div', {id: subject.code, class: 'subject'}, bar, title);
 
   subjectDiv.onmouseover = () => {
     subjectDiv.classList.add('subject-hover');
