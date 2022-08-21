@@ -86,7 +86,7 @@ const mallav3 = {
           'credits': '3',
         },
         {
-          'code': 'FG0001',
+          'code': 'FG/EH/DR/EI/FT',
           'name': 'Formación Integral',
           'shortName': 'Formación Integral',
           'requirements': [],
@@ -133,7 +133,7 @@ const mallav3 = {
           'credits': '3',
         },
         {
-          'code': 'FG0002',
+          'code': 'FG/EH',
           'name': 'Formación Integral',
           'shortName': 'Formación Integral',
           'requirements': [],
@@ -173,14 +173,14 @@ const mallav3 = {
           'credits': '6',
         },
         {
-          'code': 'FG0003',
-          'name': 'Formación Integral',
+          'code': 'FG/EH/DR/EI/FT',
+          'name': 'Formación Integral Licenciatura',
           'shortName': 'Formación Integral',
           'requirements': [],
           'credits': '3',
         },
         {
-          'code': 'FG0004',
+          'code': 'FG/EH',
           'name': 'Formación Integral',
           'shortName': 'Formación Integral',
           'requirements': [],
@@ -220,14 +220,14 @@ const mallav3 = {
           'credits': '6',
         },
         {
-          'code': 'FG0005',
-          'name': 'Formación Integral',
+          'code': 'FG/EH/DR/EI/FT',
+          'name': 'Formación Integral Licenciatura',
           'shortName': 'Formación Integral',
           'requirements': [],
           'credits': '3',
         },
         {
-          'code': 'FG0006',
+          'code': 'FG/EH',
           'name': 'Formación Integral',
           'shortName': 'Formación Integral',
           'requirements': [],

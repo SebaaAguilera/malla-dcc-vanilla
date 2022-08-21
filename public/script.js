@@ -1,3 +1,9 @@
+/* Local storage */
+const localStorageThemeKey = 'localStorageThemeKey';
+const localStorageMallaKey = 'localStorageMallaKey';
+let currentTheme;
+let currentMalla;
+
 const createElement = (tag, attributes, ...children) => {
   const element = document.createElement(tag);
   Object.entries(attributes).forEach(([key, attr]) =>
@@ -83,26 +89,34 @@ const createSemester = (number, subjects) => {
   );
 };
 
-// eslint-disable-next-line no-unused-vars
-const mount = (malla) => {
+const mount = (mallaKey) => {
   const canvas = document.getElementById('malla');
   canvas.innerHTML = '';
+
+  let malla = (mallaKey === 'mallav5') ? mallav5 : mallav3;
   malla.semesters.map(({number, subjects}) => {
     canvas.appendChild(createSemester(number, subjects));
   });
+
+  currentMalla = mallaKey;
+  localStorage.setItem(localStorageMallaKey, currentMalla);
 };
 
-const localStorageThemeKey = 'localStorageThemeKey';
-let currentTheme = localStorage.getItem(localStorageThemeKey) ||
-  (window.matchMedia &&
-  window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Dark' : 'Light');
-document.getElementById('checkboxTheme').checked = currentTheme === 'Dark';
-
-const changeTheme = () => {
+const toggleTheme = () => {
   currentTheme =
     document.getElementById('checkboxTheme').checked ? 'Dark' : 'Light';
   document.getElementById('checkboxInfo').innerHTML = `${currentTheme} theme`;
   document.querySelector('body').dataset.theme = currentTheme.toLowerCase();
   localStorage.setItem(localStorageThemeKey, currentTheme);
 };
-changeTheme();
+
+const init = () => {
+  currentMalla = localStorage.getItem(localStorageMallaKey) || 'mallav5';
+  mount(currentMalla);
+
+  currentTheme = localStorage.getItem(localStorageThemeKey) ||
+    (window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Dark' : 'Light');
+  document.getElementById('checkboxTheme').checked = currentTheme === 'Dark';
+  toggleTheme();
+}
