@@ -1,34 +1,199 @@
+:root {
+  --body-color: #f2f2f2;
+  --text-color: #111;
+
+  --subject-color: rgb(219, 224, 224);
+  --subject-outline-color: rgb(177, 184, 181);
+
+  --hover-color: rgba(110,231,183,0.5);
+  --hover-outline-color: rgb(110,231,183);
+
+  --required-color: rgba(147,197,253,0.5);
+  --required-outline-color: rgb(147,197,253);
+
+  --or-color: rgba(252,165,165,0.5);
+  --or-outline-color: rgb(252,165,165);
+
+  --simultaneous-color: rgba(255,211,77,0.5);
+  --simultaneous-outline-color: rgb(255,211,77);
+
+  --bar-color: rgba(118, 165, 153, 0.5);
+}
+
+[data-theme="dark"] {
+  --body-color: #111;
+  --text-color: #f2f2f2;
+
+  --subject-color: darkslategrey;
+  --subject-outline-color: slategrey;
+
+  --hover-color: rgba(61, 255, 178, 0.5);
+  --hover-outline-color: rgb(110,231,183);
+
+  --required-color: rgba(77, 213, 255, 0.5);
+  --required-outline-color: rgb(147,197,253);
+
+  --or-color: rgba(255, 91, 91, 0.5);
+  --or-outline-color: rgb(252,165,165);
+
+  --simultaneous-color: rgba(255, 205, 55, 0.5);
+  --simultaneous-outline-color: rgb(255,211,77);
+
+  --bar-color: rgba(33, 59, 52, 0.5);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  font: 1em sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #malla {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  header{
-    text-align: center;
-  }
-  .semester {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  .semester-title {
-    text-align: center;
-  }
-  .semester-title p {
-    transform: rotate(270deg);
-  }
-  .subject {
-    background-color: lightgrey;
-    min-width: 200px;
-    max-width: 200px;
-    height: 120px;
-    margin-inline: 1rem;
-    text-align: center;
-    box-sizing: border-box;
-  }
-  .subject p {
-    font-weight: 500;
-    margin: 2rem 0.5rem;
-  }
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header{
+  text-align: center;
+}
+
+.semester {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.semester-title {
+  text-align: center;
+  transform: rotate(270deg);
+}
+
+.subject {
+  min-width: 200px;
+  max-width: 200px;
+  height: 6.5rem;
+  margin-inline: 1rem;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: var(--subject-color);
+  border: 2px solid var(--subject-outline-color);
+}
+
+.subject-title {
+  font-weight: 500;
+  margin: 0 0.7rem;
+  /* subject height - subject bar height - paddings */
+  height: calc(6.5rem - 1rem - 8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subject-hover {
+  background-color: var(--hover-color);
+  border: 2px solid var(--hover-outline-color);
+}
+
+.subject-required {
+  background-color: var(--required-color);
+  border-color: var(--required-outline-color);
+  outline-color: var(--required-outline-color);
+  outline-style: double;
+  outline-width: 4px;
+}
+
+.subject-or {
+  background-color: var(--or-color);
+  border-color: var(--or-outline-color);
+  outline-color: var(--or-outline-color);
+  outline-style: dotted;
+  outline-width: 2px;
+}
+
+.subject-simultaneous {
+  background-color: var(--simultaneous-color);
+  border-color: var(--simultaneous-outline-color);
+  outline-color: var(--simultaneous-outline-color);
+  outline-style: dashed;
+  outline-width: 2px;
+}
+
+.subject-bar {
+  background-color: var(--bar-color);
+  text-align: left;
+  padding: 2px;
+  padding-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+  height: 1rem;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltip-text {
+  font-size: 75%;
+  text-align: center;
+
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--subject-outline-color);
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+
+  width: 120px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  margin-bottom: 8px;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+}
+
+.tooltip .tooltip-text::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--subject-outline-color) transparent transparent transparent;
+}
+
+.legend {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.legend-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.legend-icon {
+  width: 24px;
+  height: 20px;
+}
+
+.legend-text {
+  margin-left: 0.5rem;
+}

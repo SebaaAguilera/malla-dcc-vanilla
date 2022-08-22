@@ -9,17 +9,29 @@
   <script type="text/javascript" src="./public/mallav3.js"></script>
   <script type="text/javascript" src="./public/mallav5.js"></script>
   <script src="./public/script.js"></script>
+
   <body>
     <header>
       <h2>Malla DCC</h2>
+      <div class="switch">
+        <input type="checkbox" name="checkboxTheme" id="checkboxTheme" onclick="toggleTheme()">
+        <span class="info" id="checkboxInfo">Light theme</span>
+      </div>
+
       <div>
-        <button id="mountv3" onclick="mount(mallav3)">Malla v3</button>
-        <button id="mountv5" onclick="mount(mallav5)">Malla v5</button>
+        <button id="mountv3" onclick="mount('mallav3')">Malla v3</button>
+        <button id="mountv5" onclick="mount('mallav5')">Malla v5</button>
+      </div>
+
+      <div class="legend">
+        <div class = "legend-item"><div class = "subject-hover legend-icon"></div><span class = "legend-text">Ramo activo</span></div>
+        <div class = "legend-item"><div class = "subject-required legend-icon"></div><span class = "legend-text">Ramo requerido</span></div>
+        <div class = "legend-item"><div class = "subject-simultaneous legend-icon"></div><span class = "legend-text">Ramo simultaneo</span></div>
+        <div class = "legend-item"><div class = "subject-or legend-icon"></div><span class = "legend-text">Ramo "or" (se necesita uno)</span></div>
       </div>
     </header>
     <div id="malla"></div>
   </body>
-  <script>
-    mount(mallav3)
-  </script>
+
+  <script>init()</script>
 </html>
