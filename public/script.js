@@ -38,6 +38,11 @@ const createSubject = (subject) => {
   title.classList.add('subject-title');
   title.textContent = subject.name;
 
+  // Short subject name
+  const shortTitle = document.createElement('div');
+  shortTitle.classList.add('subject-short-title');
+  shortTitle.textContent = subject.shortName;
+
   // Subject code
   const code = document.createElement('span');
   code.textContent = subject.code;
@@ -62,7 +67,7 @@ const createSubject = (subject) => {
 
   // Subject
   const subjectDiv =
-    createElement('div', { id: subject.code, class: 'subject' }, bar, title);
+    createElement('div', { id: subject.code, class: 'subject' }, bar, title, shortTitle);
 
   subjectDiv.onmouseover = () => {
     subjectDiv.classList.add('subject-hover');
