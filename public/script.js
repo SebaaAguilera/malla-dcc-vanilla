@@ -62,7 +62,7 @@ const createSubject = (subject) => {
 
   // Subject
   const subjectDiv =
-    createElement('div', {id: subject.code, class: 'subject'}, bar, title);
+    createElement('div', { id: subject.code, class: 'subject' }, bar, title);
 
   subjectDiv.onmouseover = () => {
     subjectDiv.classList.add('subject-hover');
@@ -105,12 +105,14 @@ const createSemester = (number, subjects) => {
     id: `semester-${number}`,
     class: 'semester',
   },
-  createElement('div', {
-    class: 'semester-title',
-  },
-  paragraph,
-  ),
-  ...subjects.map((subject) => createSubject(subject)),
+    createElement('div', {
+      class: 'semester-title',
+    },
+      paragraph,
+    ),
+    createElement('div',{
+      class: 'semester-subjects',
+    },...subjects.map((subject) => createSubject(subject)))
   );
 };
 
@@ -119,7 +121,7 @@ const mount = (mallaKey) => {
   canvas.innerHTML = '';
 
   let malla = (mallaKey === 'mallav5') ? mallav5 : mallav3;
-  malla.semesters.map(({number, subjects}) => {
+  malla.semesters.map(({ number, subjects }) => {
     canvas.appendChild(createSemester(number, subjects));
   });
 
@@ -141,7 +143,7 @@ const init = () => {
 
   currentTheme = localStorage.getItem(localStorageThemeKey) ||
     (window.matchMedia &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Dark' : 'Light');
+      window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Dark' : 'Light');
   document.getElementById('checkboxTheme').checked = currentTheme === 'Dark';
   toggleTheme();
 }

@@ -62,8 +62,6 @@ header{
 }
 
 .semester {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -71,14 +69,33 @@ header{
 
 .semester-title {
   text-align: center;
+  justify-content: center;
   transform: rotate(270deg);
+}
+
+@media (max-width: 900px) {
+  .semester {
+    display: block;
+  }
+  .semester-title {
+    transform: rotate(0deg);
+  }
+}
+
+.semester-subjects {
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .subject {
   min-width: 200px;
   max-width: 200px;
   height: 6.5rem;
-  margin-inline: 1rem;
+  margin: 1rem;
   text-align: center;
   box-sizing: border-box;
   background-color: var(--subject-color);
